@@ -1,0 +1,1691 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reyza Halim - Master of Ceremony</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Montserrat"', "sans-serif"],
+            },
+            colors: {
+              "gold-dark": "#7A5C13",
+              "gold-base": "#D4AF37",
+              "gold-light": "#FBEA9D",
+              "dark-bg": "#0A0A0A",
+              "dark-surface": "#141414",
+              cream: "#FDF5E6",
+            },
+            animation: {
+              scroll: "scroll 20s linear infinite",
+            },
+            keyframes: {
+              scroll: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-100%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #fdf5e6;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #7a5c13;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4af37;
+      }
+
+      /* Hide Details Marker */
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+    </style>
+  </head>
+  <body
+    class="font-body antialiased overflow-x-hidden selection:bg-gold-base selection:text-dark-bg relative"
+  >
+    <nav
+      class="fixed w-full top-0 z-50 bg-dark-bg/80 backdrop-blur-[16px] border-b border-cream/5"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="font-display font-bold text-xl md:text-2xl tracking-widest text-cream hover:text-gold-base transition-colors relative z-50"
+        >
+          Reyza Halim
+        </a>
+
+        <div
+          class="hidden lg:flex gap-6 text-[10px] font-bold tracking-[0.2em] uppercase text-cream/70"
+        >
+          <a href="#about" class="hover:text-gold-base transition">Profil</a>
+          <a href="#services" class="hover:text-gold-base transition"
+            >Layanan</a
+          >
+          <a href="#experience" class="hover:text-gold-base transition"
+            >Pengalaman</a
+          >
+          <a href="#gallery" class="hover:text-gold-base transition"
+            >Portofolio</a
+          >
+          <a href="#clients" class="hover:text-gold-base transition">Klien</a>
+          <a href="#sertifikat" class="hover:text-gold-base transition"
+            >Sertifikat</a
+          >
+        </div>
+
+        <a
+          href="#contact"
+          class="hidden lg:block bg-cream text-dark-bg px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-gold-base transition-colors rounded relative z-50"
+        >
+          Hubungi
+        </a>
+
+        <button
+          id="mobile-menu-btn"
+          class="lg:hidden relative z-50 w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+        >
+          <span
+            class="block w-6 h-0.5 bg-cream transition-transform duration-300 origin-center"
+            id="bar1"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-cream transition-opacity duration-300"
+            id="bar2"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-cream transition-transform duration-300 origin-center"
+            id="bar3"
+          ></span>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-dark-bg/95 backdrop-blur-[20px] z-40 opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col items-center justify-center gap-8 text-sm md:text-base font-bold tracking-[0.2em] uppercase text-cream/80"
+    >
+      <a href="#about" class="mobile-link hover:text-gold-base transition"
+        >Profil</a
+      >
+      <a href="#services" class="mobile-link hover:text-gold-base transition"
+        >Layanan</a
+      >
+      <a href="#experience" class="mobile-link hover:text-gold-base transition"
+        >Pengalaman</a
+      >
+      <a href="#gallery" class="mobile-link hover:text-gold-base transition"
+        >Portofolio</a
+      >
+      <a href="#clients" class="mobile-link hover:text-gold-base transition"
+        >Klien</a
+      >
+      <a href="#sertifikat" class="mobile-link hover:text-gold-base transition"
+        >Sertifikat</a
+      >
+      <a
+        href="#contact"
+        class="mobile-link mt-4 border border-gold-base text-gold-base px-8 py-3 rounded-full hover:bg-gold-base hover:text-dark-bg transition"
+        >Hubungi Sekarang</a
+      >
+    </div>
+
+    <section
+      class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-dark-surface to-dark-bg pt-20"
+    >
+      <div
+        class="absolute top-[15%] w-full text-center z-0 pointer-events-none select-none reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] cubic-bezier(0.5,0,0,1)"
+      >
+        <h1
+          class="font-display text-[25vw] md:text-[22vw] leading-none font-black text-gold-base/5 tracking-tighter mix-blend-color-dodge"
+        >
+          Port<span class="italic font-normal">folio</span>
+        </h1>
+      </div>
+
+      <div
+        class="relative z-10 w-full max-w-[1400px] mx-auto h-[75vh] flex flex-col md:flex-row items-center justify-center md:justify-start px-4 md:px-12"
+      >
+        <div
+          class="relative w-[280px] h-[500px] sm:w-[350px] sm:h-[450px] md:w-[550px] md:h-[700px] z-30 flex-shrink-0 md:ml-10 drop-shadow-[0_0_40px_rgba(212,175,55,0.3)] mt-20 md:mt-0"
+        >
+          <img
+            src="img/sendiri.png"
+            alt="Reyza Halim MC"
+            class="w-full h-full object-contain filter contrast-125 brightness-90"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1558222218-b7b54eede3f3?q=80&w=1000&auto=format&fit=crop'
+            "
+          />
+        </div>
+
+        <div
+          class="absolute bottom-[5%] md:bottom-[15%] left-4 md:left-20 z-40 pointer-events-none reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-200"
+        >
+          <h2
+            class="font-body font-black text-[15vw] md:text-6xl text-cream leading-[0.85] tracking-tighter drop-shadow-2xl"
+          >
+            MAS<br />TER<br />OF<br />CERE<br />MONY
+          </h2>
+        </div>
+
+        <div
+          class="absolute top-[8%] sm:top-[12%] md:top-[35%] right-4 md:right-12 z-20 text-right pointer-events-none reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-400"
+        >
+          <p
+            class="font-display italic text-xs md:text-xl tracking-[0.2em] md:tracking-[0.3em] text-gold-base mb-1 md:mb-2 mr-1 md:mr-2"
+          >
+            THE BEST CHOICE <br />
+            MEANINGFUL MOMENTS
+          </p>
+          <h1
+            class="font-body font-black text-[18vw] md:text-[9vw] text-cream leading-[0.75] tracking-tighter drop-shadow-2xl"
+          >
+            STORY<br /><span
+              class="text-transparent [-webkit-text-stroke:1.5px_#fdf5e6] max-md:[-webkit-text-stroke:1px_#fdf5e6]"
+              >TELLER</span
+            >
+          </h1>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-6 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col sm:flex-row justify-between items-center sm:items-end border-b border-cream/10 pb-4 z-30 text-[9px] md:text-xs font-bold tracking-[0.2em] uppercase gap-2 sm:gap-0 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-500"
+      >
+        <div class="flex items-center gap-2 text-gold-base">
+          <span class="w-2 h-2 rounded-full bg-gold-base animate-pulse"></span>
+          TERSEDIA UNTUK BOOKING 2026
+        </div>
+        <div class="flex gap-6 opacity-70">
+          <p>SUKABUMI, IDN</p>
+          <p class="hidden sm:block">MC PROFESSIONAL</p>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="py-3 md:py-5 bg-dark-surface border-b border-cream/5 flex w-full overflow-hidden whitespace-nowrap reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+    >
+      <div
+        class="flex justify-around min-w-full shrink-0 animate-scroll font-display italic text-lg md:text-2xl tracking-widest text-cream/70"
+      >
+        &nbsp;✦&nbsp; WEDDING &nbsp;✦&nbsp; ENGAGEMENT &nbsp;✦&nbsp; SIRAMAN
+        &nbsp;✦&nbsp; FESTIVAL MUSIK &nbsp;✦&nbsp; CORPORATE EVENT &nbsp;✦&nbsp;
+        LAUNCHING PRODUCT
+      </div>
+      <div
+        class="flex justify-around min-w-full shrink-0 animate-scroll font-display italic text-lg md:text-2xl tracking-widest text-cream/70"
+      >
+        &nbsp;✦&nbsp; WEDDING &nbsp;✦&nbsp; ENGAGEMENT &nbsp;✦&nbsp; SIRAMAN
+        &nbsp;✦&nbsp; FESTIVAL MUSIK &nbsp;✦&nbsp; CORPORATE EVENT &nbsp;✦&nbsp;
+        LAUNCHING PRODUCT
+      </div>
+    </div>
+
+    <section id="about" class="py-20 md:py-32 px-6 max-w-[1400px] mx-auto">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center"
+      >
+        <div
+          class="lg:col-span-7 bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-6 md:p-16 rounded-[2rem] md:rounded-[2.5rem] reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <p
+            class="text-gold-base text-[10px] tracking-[0.3em] uppercase font-bold mb-4"
+          >
+            Tentang Reyza Halim
+          </p>
+          <h2
+            class="font-display text-3xl md:text-5xl lg:text-6xl mb-6 md:mb-8 font-bold leading-tight"
+          >
+            Acara Sekali Seumur Hidup, Harus
+            <span class="italic text-gold-base">Berkesan & Nyaman.</span>
+          </h2>
+          <p
+            class="font-light text-sm md:text-base leading-relaxed opacity-80 mb-6 md:mb-8"
+          >
+            Reyza Halim adalah seorang MC profesional yang berasal dari
+            Sukabumi, Jawa Barat. Ia dikenal luas di kalangan masyarakat
+            Sukabumi dan sekitarnya sebagai pembawa acara yang berpengalaman.
+            Dengan gaya yang komunikatif dan santun, Reyza mampu beradaptasi
+            dengan berbagai tema acara, baik yang bersifat tradisional maupun
+            modern.
+          </p>
+          <div class="flex flex-wrap gap-2 md:gap-3">
+            <span
+              class="border border-cream/20 px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs tracking-widest uppercase text-cream"
+              >Warm</span
+            >
+            <span
+              class="border border-cream/20 px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs tracking-widest uppercase text-cream"
+              >Storyteller</span
+            >
+            <span
+              class="border border-cream/20 px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs tracking-widest uppercase text-cream"
+              >Professional</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-200"
+        >
+          <div
+            class="bg-gradient-to-br from-gold-dark to-dark-surface p-6 md:p-8 rounded-[2rem] border border-gold-base/20 flex justify-between items-center"
+          >
+            <div>
+              <p class="font-display text-4xl md:text-5xl font-bold text-cream">
+                <span class="counter" data-target="200">0</span>+
+              </p>
+              <p
+                class="text-[9px] md:text-[10px] tracking-widest uppercase mt-2 text-cream/80"
+              >
+                Event Diselesaikan
+              </p>
+            </div>
+            <svg
+              class="w-10 h-10 md:w-12 md:h-12 text-cream/50"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1"
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-6 md:p-8 rounded-[2rem] flex justify-between items-center"
+          >
+            <div>
+              <p
+                class="font-display text-4xl md:text-5xl font-bold text-gold-base"
+              >
+                <span class="counter" data-target="6">0</span>
+              </p>
+              <p
+                class="text-[9px] md:text-[10px] tracking-widest uppercase mt-2 opacity-80"
+              >
+                Tahun Pengalaman
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION RATE CARD & LAYANAN -->
+    <section
+      id="services"
+      class="py-16 md:py-24 bg-dark-surface/30 border-t border-cream/5"
+    >
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div
+          class="text-center mb-10 md:mb-16 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <p
+            class="text-gold-base text-[10px] tracking-[0.3em] uppercase font-bold mb-3 md:mb-4"
+          >
+            Spesialisasi & Rate Card
+          </p>
+          <h2 class="font-display text-3xl md:text-5xl font-bold">
+            Layanan
+            <span
+              class="italic text-transparent [-webkit-text-stroke:1.5px_#fdf5e6] max-md:[-webkit-text-stroke:1px_#fdf5e6]"
+              >Acara</span
+            >
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8"
+        >
+          <!-- Layanan 1: Wedding -->
+          <div
+            class="pricing-card bg-dark-surface/40 backdrop-blur-[16px] border border-cream/10 text-cream p-6 md:p-10 rounded-[2rem] transition-all duration-400 cursor-pointer md:hover:-translate-y-2 reveal-item opacity-0 translate-y-10 delay-[0ms]"
+          >
+            <h3 class="font-display text-2xl md:text-3xl mb-2 pricing-title">
+              Wedding Service
+            </h3>
+            <p
+              class="text-[10px] md:text-xs uppercase tracking-widest mb-2 md:mb-3 text-gold-base pricing-subtitle"
+            >
+              Mulai dari Rp 1.700.000
+            </p>
+            <p
+              class="text-[10px] uppercase tracking-widest mb-6 opacity-60 font-light"
+            >
+              Max 7 Jam Kerja
+            </p>
+            <ul
+              class="text-xs md:text-sm space-y-3 md:space-y-4 opacity-80 mb-8 md:mb-10 font-light"
+            >
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> MC Akad, Adat
+                Sunda (Huap Lingkung) & Sungkeman
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> MC Resepsi,
+                Kirab & Wedding Dance
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Flashmob,
+                Pelemparan Bunga & Wedding Kiss
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Free Guide
+                Book, Backsound & Script Speech
+              </li>
+            </ul>
+          </div>
+
+          <!-- Layanan 2: Engagement & Siraman -->
+          <div
+            class="pricing-card bg-gradient-to-b from-gold-dark to-dark-surface border border-gold-base/30 shadow-[0_20px_40px_rgba(0,0,0,0.5)] md:-translate-y-4 text-cream p-6 md:p-10 rounded-[2rem] transition-all duration-400 cursor-pointer reveal-item opacity-0 translate-y-10 delay-100 is-active"
+          >
+            <h3 class="font-display text-2xl md:text-3xl mb-2 pricing-title">
+              Engagement & Siraman
+            </h3>
+            <p
+              class="text-[10px] md:text-xs uppercase tracking-widest mb-2 md:mb-3 text-cream/70 pricing-subtitle"
+            >
+              Engagement: Rp 1.300.000 <br />
+              Siraman: Rp 500.000
+            </p>
+            <p
+              class="text-[10px] uppercase tracking-widest mb-6 opacity-60 font-light"
+            >
+              Max 4 Jam Kerja
+            </p>
+            <ul
+              class="text-xs md:text-sm space-y-3 md:space-y-4 opacity-90 mb-8 md:mb-10 font-medium"
+            >
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Full Acara
+                Dipandu & Meeting H-1
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Engagement
+                Games & Talkshow
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> MC Opening,
+                Ngaras, Siraman & Saweran
+              </li>
+              <li class="flex gap-3 border-t border-cream/20 pt-3 mt-3">
+                <span class="text-gold-base pricing-icon">✦</span> Paket All-in
+                (MC + WO 3 Crew): Rp 3.000.000
+              </li>
+            </ul>
+          </div>
+
+          <!-- Layanan 3: Corporate & Event -->
+          <div
+            class="pricing-card bg-dark-surface/40 backdrop-blur-[16px] border border-cream/10 text-cream p-6 md:p-10 rounded-[2rem] transition-all duration-400 cursor-pointer md:hover:-translate-y-2 reveal-item opacity-0 translate-y-10 delay-200 sm:col-span-2 md:col-span-1"
+          >
+            <h3 class="font-display text-2xl md:text-3xl mb-2 pricing-title">
+              Corporate & All Event
+            </h3>
+            <p
+              class="text-[10px] md:text-xs uppercase tracking-widest mb-2 md:mb-3 text-gold-base pricing-subtitle"
+            >
+              Mulai dari Rp 1.500.000
+            </p>
+            <p
+              class="text-[10px] uppercase tracking-widest mb-6 opacity-60 font-light"
+            >
+              Max 4 Jam Acara
+            </p>
+            <ul
+              class="text-xs md:text-sm space-y-3 md:space-y-4 opacity-80 mb-8 md:mb-10 font-light"
+            >
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Festival &
+                Lomba Musik
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Gathering &
+                Gala Dinner Perusahaan
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Rapat Kerja
+                Tahunan
+              </li>
+              <li class="flex gap-3">
+                <span class="text-gold-base pricing-icon">✦</span> Launching
+                Product & Class Cooking
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PENGALAMAN -->
+    <section
+      id="experience"
+      class="py-16 md:py-24 bg-dark-bg border-y border-cream/5"
+    >
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div
+          class="text-center mb-10 md:mb-16 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <p
+            class="text-gold-base text-[10px] tracking-[0.3em] uppercase font-bold mb-3 md:mb-4"
+          >
+            Jam Terbang & Rekam Jejak
+          </p>
+          <h2 class="font-display text-3xl md:text-5xl font-bold">
+            MC <span class="italic text-gold-base">Experience</span>
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+        >
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-5 md:p-6 rounded-2xl border-l-4 border-l-gold-base hover:bg-dark-surface transition duration-300 reveal-item opacity-0 translate-y-10"
+          >
+            <h4 class="font-display text-lg md:text-xl font-bold mb-1">
+              Gala Dinner & Raker Dwiharta Logistindo
+            </h4>
+            <p
+              class="text-[10px] md:text-xs text-gold-base tracking-widest uppercase opacity-80 mb-2 md:mb-3"
+            >
+              Anyer, Banten
+            </p>
+            <p class="font-light text-xs md:text-sm opacity-70">
+              Memandu serangkaian acara gathering, gala dinner, hingga Rapat
+              Kerja Tahunan perusahaan.
+            </p>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-5 md:p-6 rounded-2xl border-l-4 border-l-gold-base hover:bg-dark-surface transition duration-300 reveal-item opacity-0 translate-y-10 delay-100"
+          >
+            <h4 class="font-display text-lg md:text-xl font-bold mb-1">
+              Gudang Garam Merah Festival
+            </h4>
+            <p
+              class="text-[10px] md:text-xs text-gold-base tracking-widest uppercase opacity-80 mb-2 md:mb-3"
+            >
+              Cianjur
+            </p>
+            <p class="font-light text-xs md:text-sm opacity-70">
+              MC Festival & Lomba Musik yang memeriahkan crowd pengunjung dan
+              band peserta.
+            </p>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-5 md:p-6 rounded-2xl border-l-4 border-l-gold-base hover:bg-dark-surface transition duration-300 reveal-item opacity-0 translate-y-10 delay-200"
+          >
+            <h4 class="font-display text-lg md:text-xl font-bold mb-1">
+              PHBN Kemerdekaan 17 Agustus
+            </h4>
+            <p
+              class="text-[10px] md:text-xs text-gold-base tracking-widest uppercase opacity-80 mb-2 md:mb-3"
+            >
+              Cibubur, Jakarta Timur
+            </p>
+            <p class="font-light text-xs md:text-sm opacity-70">
+              Menghidupkan semangat peringatan hari besar nasional dan
+              kemerdekaan untuk publik.
+            </p>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-5 md:p-6 rounded-2xl border-l-4 border-l-gold-base hover:bg-dark-surface transition duration-300 reveal-item opacity-0 translate-y-10"
+          >
+            <h4 class="font-display text-lg md:text-xl font-bold mb-1">
+              Gathering Anniversary Motor Club
+            </h4>
+            <p
+              class="text-[10px] md:text-xs text-gold-base tracking-widest uppercase opacity-80 mb-2 md:mb-3"
+            >
+              Bellwood, Secret Garden
+            </p>
+            <p class="font-light text-xs md:text-sm opacity-70">
+              Memandu selebrasi ulang tahun komunitas otomotif dengan atmosfer
+              solid dan kasual.
+            </p>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-5 md:p-6 rounded-2xl border-l-4 border-l-gold-base hover:bg-dark-surface transition duration-300 reveal-item opacity-0 translate-y-10 delay-100"
+          >
+            <h4 class="font-display text-lg md:text-xl font-bold mb-1">
+              Launching Product forVITA
+            </h4>
+            <p
+              class="text-[10px] md:text-xs text-gold-base tracking-widest uppercase opacity-80 mb-2 md:mb-3"
+            >
+              Yogya Mall Sukabumi
+            </p>
+            <p class="font-light text-xs md:text-sm opacity-70">
+              MC Launching Product sekaligus memandu live Cooking Class di pusat
+              perbelanjaan bersama Chef.
+            </p>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-5 md:p-6 rounded-2xl border-l-4 border-l-gold-base hover:bg-dark-surface transition duration-300 reveal-item opacity-0 translate-y-10 delay-200"
+          >
+            <h4 class="font-display text-lg md:text-xl font-bold mb-1">
+              Sweet 17 Vareta & Private Events
+            </h4>
+            <p
+              class="text-[10px] md:text-xs text-gold-base tracking-widest uppercase opacity-80 mb-2 md:mb-3"
+            >
+              Láska Hotel Ciletuh & Various Venues
+            </p>
+            <p class="font-light text-xs md:text-sm opacity-70">
+              Pengalaman memandu acara pribadi seperti ulang tahun ke-17 yang
+              intim dan memorable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PORTOFOLIO GALLERY -->
+    <section
+      id="gallery"
+      class="py-16 md:py-32 px-6 max-w-[1400px] mx-auto bg-dark-surface/20"
+    >
+      <div
+        class="text-center mb-10 md:mb-16 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+      >
+        <p
+          class="text-gold-base text-[10px] tracking-[0.3em] uppercase font-bold mb-3 md:mb-4"
+        >
+          Visual
+        </p>
+        <h2 class="font-display text-3xl md:text-5xl font-bold">
+          Jejak
+          <span
+            class="italic text-transparent [-webkit-text-stroke:1.5px_#fdf5e6] max-md:[-webkit-text-stroke:1px_#fdf5e6]"
+            >Portofolio</span
+          >
+        </h2>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8"
+      >
+        <!-- Portofolio 1: Dwiharta Logistindo -->
+        <div
+          class="flex flex-col items-center reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-sm overflow-hidden group border border-cream/10 bg-dark-bg"
+          >
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/porto-dwiharta-1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Gala Dinner Dwiharta"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+              <img
+                src="img/porto-dwiharta-2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Gala Dinner Dwiharta"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1478147424096-f65b62fa364e?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+            </div>
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-4 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase"
+          >
+            Gala Dinner & Raker
+          </h3>
+          <p class="text-[10px] text-gold-base tracking-widest uppercase mt-1">
+            Dwiharta Logistindo - Anyer
+          </p>
+        </div>
+
+        <!-- Portofolio 2: Gudang Garam Merah -->
+        <div
+          class="flex flex-col items-center reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-100"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-sm overflow-hidden group border border-cream/10 bg-dark-bg"
+          >
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/porto-gudanggaram-1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Festival Gudang Garam"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+              <img
+                src="img/porto-gudanggaram-2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Festival Gudang Garam"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1533174000255-730328497677?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+            </div>
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-4 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase"
+          >
+            Festival & Lomba Musik
+          </h3>
+          <p class="text-[10px] text-gold-base tracking-widest uppercase mt-1">
+            Gudang Garam - Cianjur
+          </p>
+        </div>
+
+        <!-- Portofolio 3: Sweet 17 Vareta -->
+        <div
+          class="flex flex-col items-center reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-200"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-sm overflow-hidden group border border-cream/10 bg-dark-bg"
+          >
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/porto-sweet17-1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Sweet 17 Vareta"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1530103862676-de88b58405d4?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+              <img
+                src="img/porto-sweet17-2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Sweet 17 Vareta"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+            </div>
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-4 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase"
+          >
+            Birthday Party Sweet 17
+          </h3>
+          <p class="text-[10px] text-gold-base tracking-widest uppercase mt-1">
+            Láska Hotel - Ciletuh
+          </p>
+        </div>
+
+        <!-- Portofolio 4: Kemerdekaan Cibubur -->
+        <div
+          class="flex flex-col items-center reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-sm overflow-hidden group border border-cream/10 bg-dark-bg"
+          >
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/porto-17an-1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="PHBN 17 Agustus"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1523580494112-071d16940a0d?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+              <img
+                src="img/porto-17an-2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="PHBN 17 Agustus"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+            </div>
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-4 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase"
+          >
+            PHBN 17 Agustus
+          </h3>
+          <p class="text-[10px] text-gold-base tracking-widest uppercase mt-1">
+            Cibubur - Jakarta Timur
+          </p>
+        </div>
+
+        <!-- Portofolio 5: Anniversary Motor Club -->
+        <div
+          class="flex flex-col items-center reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-100"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-sm overflow-hidden group border border-cream/10 bg-dark-bg"
+          >
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/porto-motorclub-1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Anniversary Motor Club"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+              <img
+                src="img/porto-motorclub-2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Anniversary Motor Club"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1502744688674-c619d1586c9e?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+            </div>
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-4 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase"
+          >
+            Anniversary Motor Club
+          </h3>
+          <p class="text-[10px] text-gold-base tracking-widest uppercase mt-1">
+            Bellwood - Secret Garden
+          </p>
+        </div>
+
+        <!-- Portofolio 6: Polres Sukabumi -->
+        <div
+          class="flex flex-col items-center reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-200"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-sm overflow-hidden group border border-cream/10 bg-dark-bg"
+          >
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/porto-polres-1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Gathering Polres"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+              <img
+                src="img/porto-polres-2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Gathering Polres"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+            </div>
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-4 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase"
+          >
+            Gathering Anniversary
+          </h3>
+          <p class="text-[10px] text-gold-base tracking-widest uppercase mt-1">
+            Polres Sukabumi Kota
+          </p>
+        </div>
+
+        <!-- Portofolio 7: Launching forVITA -->
+        <div
+          class="flex flex-col items-center reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] lg:col-start-2"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-sm overflow-hidden group border border-cream/10 bg-dark-bg"
+          >
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/porto-forvita-1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Launching forVITA"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+              <img
+                src="img/porto-forvita-2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Launching forVITA"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=600&auto=format&fit=crop'
+                "
+              />
+            </div>
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark-bg/60 text-cream p-1.5 md:p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-dark-bg transition-all backdrop-blur-sm cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-4 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase"
+          >
+            Launching Product & Cooking Class
+          </h3>
+          <p class="text-[10px] text-gold-base tracking-widest uppercase mt-1">
+            forVITA - Yogya Mall
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION KLIEN / KOLABORASI (DIBUAT LINGKARAN) -->
+    <section
+      id="clients"
+      class="py-16 md:py-24 bg-dark-surface/50 border-y border-cream/5"
+    >
+      <div class="max-w-[1400px] mx-auto px-6 text-center">
+        <div
+          class="mb-10 md:mb-16 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <p
+            class="text-gold-base text-[10px] tracking-[0.3em] uppercase font-bold mb-3 md:mb-4"
+          >
+            Kolaborasi
+          </p>
+          <h2 class="font-display text-3xl md:text-5xl font-bold">
+            Pihak Yang Sudah
+            <span class="italic text-gold-base">Bekerja Sama</span>
+          </h2>
+        </div>
+
+        <div
+          class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80"
+        >
+          <!-- Logo 1: Dwiharta Logistindo -->
+          <div
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border border-cream/20 bg-dark-bg/50 p-4 flex items-center justify-center group reveal-item opacity-0 translate-y-5 delay-75 hover:border-gold-base transition"
+          >
+            <img
+              src="img/logo-dwiharta.png"
+              alt="Logo Dwiharta Logistindo"
+              class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-300"
+              onerror="
+                this.outerHTML =
+                  '<div class=\'text-[9px] md:text-xs text-cream/50 font-bold uppercase tracking-widest leading-tight\'>Dwiharta<br>Logistindo</div>'
+              "
+            />
+          </div>
+
+          <!-- Logo 2: Gudang Garam -->
+          <div
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border border-cream/20 bg-dark-bg/50 p-4 flex items-center justify-center group reveal-item opacity-0 translate-y-5 delay-150 hover:border-gold-base transition"
+          >
+            <img
+              src="img/logo-gudang-garam.png"
+              alt="Logo Gudang Garam"
+              class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-300"
+              onerror="
+                this.outerHTML =
+                  '<div class=\'text-[9px] md:text-xs text-cream/50 font-bold uppercase tracking-widest leading-tight\'>Gudang<br>Garam</div>'
+              "
+            />
+          </div>
+
+          <!-- Logo 3: Láska Hotel and Resort -->
+          <div
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border border-cream/20 bg-dark-bg/50 p-4 flex items-center justify-center group reveal-item opacity-0 translate-y-5 delay-200 hover:border-gold-base transition"
+          >
+            <img
+              src="img/logo-laska.png"
+              alt="Logo Láska Hotel and Resort"
+              class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-300"
+              onerror="
+                this.outerHTML =
+                  '<div class=\'text-[9px] md:text-xs text-cream/50 font-bold uppercase tracking-widest leading-tight\'>Láska<br>Hotel</div>'
+              "
+            />
+          </div>
+
+          <!-- Logo 4: Polres Sukabumi -->
+          <div
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border border-cream/20 bg-dark-bg/50 p-4 flex items-center justify-center group reveal-item opacity-0 translate-y-5 delay-300 hover:border-gold-base transition"
+          >
+            <img
+              src="img/logo-polres.png"
+              alt="Logo Polres Sukabumi Kota"
+              class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-300"
+              onerror="
+                this.outerHTML =
+                  '<div class=\'text-[9px] md:text-xs text-cream/50 font-bold uppercase tracking-widest leading-tight\'>Polres<br>Sukabumi</div>'
+              "
+            />
+          </div>
+
+          <!-- Logo 5: forVITA -->
+          <div
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border border-cream/20 bg-dark-bg/50 p-4 flex items-center justify-center group reveal-item opacity-0 translate-y-5 delay-400 hover:border-gold-base transition"
+          >
+            <img
+              src="img/logo-forvita.png"
+              alt="Logo forVITA"
+              class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-300"
+              onerror="
+                this.outerHTML =
+                  '<div class=\'text-[9px] md:text-xs text-cream/50 font-bold uppercase tracking-widest leading-tight\'>forVITA</div>'
+              "
+            />
+          </div>
+
+          <!-- Logo 6: Toserba Yogya -->
+          <div
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border border-cream/20 bg-dark-bg/50 p-4 flex items-center justify-center group reveal-item opacity-0 translate-y-5 delay-500 hover:border-gold-base transition"
+          >
+            <img
+              src="img/logo-yogya.png"
+              alt="Logo Toserba Yogya"
+              class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-300"
+              onerror="
+                this.outerHTML =
+                  '<div class=\'text-[9px] md:text-xs text-cream/50 font-bold uppercase tracking-widest leading-tight\'>Toserba<br>Yogya</div>'
+              "
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="sertifikat"
+      class="py-16 md:py-24 bg-dark-surface/30 border-y border-cream/5"
+    >
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div
+          class="text-center mb-10 md:mb-16 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <p
+            class="text-gold-base text-[10px] tracking-[0.3em] uppercase font-bold mb-3 md:mb-4"
+          >
+            Karya & Bukti Kualitas
+          </p>
+          <h2 class="font-display text-3xl md:text-5xl font-bold">
+            Bukan Sekadar Hasil Jadi, <br />
+            <span class="italic text-gold-base text-2xl md:text-4xl mt-2 block"
+              >Tapi Solusi Memberikan Dampak</span
+            >
+          </h2>
+          <p
+            class="font-light text-xs md:text-sm mt-4 opacity-70 max-w-2xl mx-auto"
+          >
+            Portofolio ini adalah kumpulan karya yang telah saya lalui dengan
+            penuh perhatian dan standar tinggi serta profesional.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+        >
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-4 rounded-xl text-center group hover:-translate-y-2 transition duration-300 reveal-item opacity-0 translate-y-10"
+          >
+            <div
+              class="w-full aspect-[4/3] bg-dark-bg/50 rounded-lg border border-cream/10 flex items-center justify-center mb-4 overflow-hidden"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
+                alt="Sertifikat 1"
+              />
+            </div>
+            <h4 class="font-display text-base md:text-lg font-bold">
+              Sertifikasi MC Profesional
+            </h4>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-4 rounded-xl text-center group hover:-translate-y-2 transition duration-300 reveal-item opacity-0 translate-y-10 delay-100"
+          >
+            <div
+              class="w-full aspect-[4/3] bg-dark-bg/50 rounded-lg border border-cream/10 flex items-center justify-center mb-4 overflow-hidden"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
+                alt="Sertifikat 2"
+              />
+            </div>
+            <h4 class="font-display text-base md:text-lg font-bold">
+              Master of Ceremony Workshop
+            </h4>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-4 rounded-xl text-center group hover:-translate-y-2 transition duration-300 reveal-item opacity-0 translate-y-10 delay-200"
+          >
+            <div
+              class="w-full aspect-[4/3] bg-dark-bg/50 rounded-lg border border-cream/10 flex items-center justify-center mb-4 overflow-hidden"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
+                alt="Sertifikat 3"
+              />
+            </div>
+            <h4 class="font-display text-base md:text-lg font-bold">
+              Penghargaan MC Terfavorit
+            </h4>
+          </div>
+
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-4 rounded-xl text-center group hover:-translate-y-2 transition duration-300 reveal-item opacity-0 translate-y-10 delay-300"
+          >
+            <div
+              class="w-full aspect-[4/3] bg-dark-bg/50 rounded-lg border border-cream/10 flex items-center justify-center mb-4 overflow-hidden"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
+                alt="Sertifikat 4"
+              />
+            </div>
+            <h4 class="font-display text-base md:text-lg font-bold">
+              Public Speaking Workshop
+            </h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="py-20 md:py-32 px-6 max-w-[1400px] mx-auto border-b border-cream/5"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center"
+      >
+        <div
+          class="lg:col-span-7 bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-8 md:p-16 rounded-[2rem] md:rounded-[2.5rem] reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms]"
+        >
+          <p
+            class="text-gold-base text-[10px] tracking-[0.3em] uppercase font-bold mb-4"
+          >
+            Kontak Kami
+          </p>
+          <h2
+            class="font-display text-4xl md:text-6xl mb-6 md:mb-8 font-bold leading-tight"
+          >
+            Mari <br /><span class="italic text-gold-base">Berdiskusi.</span>
+          </h2>
+          <p
+            class="font-light text-sm md:text-base leading-relaxed opacity-80 mb-8"
+          >
+            Setiap acara memiliki ceritanya sendiri. Hubungi saya untuk
+            memastikan visi acara Anda tersampaikan dengan sempurna. Dapatkan
+            gratis Guide Book & Konsultasi Konsep Acara!
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="https://wa.me/6289526469598"
+              target="_blank"
+              class="border border-cream/20 px-4 md:px-6 py-2.5 hover:bg-gold-base hover:text-dark-bg hover:border-transparent transition rounded-full text-[10px] md:text-xs tracking-widest uppercase flex items-center gap-2"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+                />
+              </svg>
+              WhatsApp
+            </a>
+            <a
+              href="https://instagram.com/reyzahalim"
+              target="_blank"
+              class="border border-cream/20 px-4 md:px-6 py-2.5 hover:bg-gold-base hover:text-dark-bg hover:border-transparent transition rounded-full text-[10px] md:text-xs tracking-widest uppercase"
+              >Instagram</a
+            >
+            <a
+              href="https://instagram.com/nabastala.wo"
+              target="_blank"
+              class="border border-cream/20 px-4 md:px-6 py-2.5 hover:bg-gold-base hover:text-dark-bg hover:border-transparent transition rounded-full text-[10px] md:text-xs tracking-widest uppercase"
+              >Partner WO</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] delay-200"
+        >
+          <div
+            class="bg-gradient-to-br from-gold-dark to-dark-surface p-6 md:p-10 rounded-[2rem] border border-gold-base/20 flex flex-col justify-center"
+          >
+            <p
+              class="text-[9px] md:text-[10px] tracking-widest uppercase opacity-80 mb-2"
+            >
+              Pesan/Booking
+            </p>
+            <p class="font-display text-2xl md:text-3xl font-bold">
+              +62 895 2646 9598
+            </p>
+            <p
+              class="font-display text-lg md:text-xl font-bold mt-2 text-gold-base"
+            >
+              @reyzahalim
+            </p>
+          </div>
+          <div
+            class="bg-dark-surface/40 backdrop-blur-[16px] border border-cream/5 p-6 md:p-10 rounded-[2rem] flex flex-col justify-center"
+          >
+            <p
+              class="text-[9px] md:text-[10px] tracking-widest uppercase opacity-80 mb-2"
+            >
+              Basis Lokasi
+            </p>
+            <p class="font-display text-2xl md:text-3xl font-bold">Sukabumi,</p>
+            <p class="font-display text-lg md:text-xl font-bold opacity-80">
+              Jawa Barat
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 md:py-12 px-6 max-w-[1400px] mx-auto">
+      <div
+        class="flex flex-col-reverse md:flex-row justify-between items-center text-[9px] md:text-[10px] font-bold tracking-widest uppercase opacity-50 reveal-item opacity-0 translate-y-10 transition-all duration-[1000ms] gap-6 md:gap-0"
+      >
+        <p class="text-center md:text-left">
+          &copy; 2026 REYZA HALIM. ALL RIGHTS RESERVED.
+        </p>
+        <div class="flex gap-4 md:gap-6">
+          <a
+            href="https://wa.me/6289526469598"
+            target="_blank"
+            class="hover:text-gold-base transition"
+            >WHATSAPP</a
+          >
+          <a
+            href="https://instagram.com/reyzahalim"
+            target="_blank"
+            class="hover:text-gold-base transition"
+            >INSTAGRAM</a
+          >
+          <a
+            href="https://instagram.com/nabastala.wo"
+            target="_blank"
+            class="hover:text-gold-base transition"
+            >PARTNER WO</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Mobile Menu Logic
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const links = document.querySelectorAll(".mobile-link");
+        const b1 = document.getElementById("bar1");
+        const b2 = document.getElementById("bar2");
+        const b3 = document.getElementById("bar3");
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+          isMenuOpen = !isMenuOpen;
+          if (isMenuOpen) {
+            menu.classList.remove("pointer-events-none", "opacity-0");
+            menu.classList.add("opacity-100");
+            b1.classList.add("translate-y-2.5", "rotate-45");
+            b2.classList.add("opacity-0");
+            b3.classList.add("-translate-y-2.5", "-rotate-45");
+            document.body.style.overflow = "hidden";
+          } else {
+            menu.classList.add("pointer-events-none", "opacity-0");
+            menu.classList.remove("opacity-100");
+            b1.classList.remove("translate-y-2.5", "rotate-45");
+            b2.classList.remove("opacity-0");
+            b3.classList.remove("-translate-y-2.5", "-rotate-45");
+            document.body.style.overflow = "auto";
+          }
+        }
+
+        btn.addEventListener("click", toggleMenu);
+        links.forEach((link) => {
+          link.addEventListener("click", () => {
+            if (isMenuOpen) toggleMenu();
+          });
+        });
+
+        // 2. Animasi Scroll Reveal
+        const reveals = document.querySelectorAll(".reveal-item");
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove("opacity-0", "translate-y-10");
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        reveals.forEach((reveal) => revealObserver.observe(reveal));
+
+        // 3. Animasi Angka Berjalan (Counter)
+        const counters = document.querySelectorAll(".counter");
+        const counterObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const target = +entry.target.getAttribute("data-target");
+                let count = 0;
+                const updateCount = () => {
+                  const inc = target / 40;
+                  if (count < target) {
+                    count += inc;
+                    entry.target.innerText = Math.ceil(count);
+                    setTimeout(updateCount, 30);
+                  } else {
+                    entry.target.innerText = target;
+                  }
+                };
+                updateCount();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+        counters.forEach((counter) => counterObserver.observe(counter));
+
+        // 4. Grid Layanan Interaktif (Interactive Pricing Card)
+        const pricingCards = document.querySelectorAll(".pricing-card");
+
+        const setInactive = (card) => {
+          card.classList.remove(
+            "bg-gradient-to-b",
+            "from-gold-dark",
+            "to-dark-surface",
+            "border-gold-base/30",
+            "shadow-[0_20px_40px_rgba(0,0,0,0.5)]",
+            "md:-translate-y-4",
+            "is-active",
+          );
+          card.classList.add(
+            "bg-dark-surface/40",
+            "backdrop-blur-[16px]",
+            "border-cream/10",
+          );
+
+          const subtitle = card.querySelector(".pricing-subtitle");
+          if (subtitle) {
+            subtitle.classList.remove("text-cream/70");
+            subtitle.classList.add("text-gold-base");
+          }
+        };
+
+        const setActive = (card) => {
+          card.classList.remove(
+            "bg-dark-surface/40",
+            "backdrop-blur-[16px]",
+            "border-cream/10",
+          );
+          card.classList.add(
+            "bg-gradient-to-b",
+            "from-gold-dark",
+            "to-dark-surface",
+            "border-gold-base/30",
+            "shadow-[0_20px_40px_rgba(0,0,0,0.5)]",
+            "md:-translate-y-4",
+            "is-active",
+          );
+
+          const subtitle = card.querySelector(".pricing-subtitle");
+          if (subtitle) {
+            subtitle.classList.remove("text-gold-base");
+            subtitle.classList.add("text-cream/70");
+          }
+        };
+
+        pricingCards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            pricingCards.forEach((c) => setInactive(c));
+            setActive(card);
+          });
+        });
+
+        // 5. Tombol Navigasi Kiri & Kanan untuk Galeri
+        const prevBtns = document.querySelectorAll(".btn-prev");
+        const nextBtns = document.querySelectorAll(".btn-next");
+
+        prevBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const container = btn.parentElement.querySelector(
+              ".carousel-container",
+            );
+            container.scrollBy({
+              left: -container.offsetWidth,
+              behavior: "smooth",
+            });
+          });
+        });
+
+        nextBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const container = btn.parentElement.querySelector(
+              ".carousel-container",
+            );
+            container.scrollBy({
+              left: container.offsetWidth,
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
