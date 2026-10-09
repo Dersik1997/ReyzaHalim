@@ -13,6 +13,19 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Sembunyikan scrollbar untuk Chrome, Safari, dan Opera */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Sembunyikan scrollbar untuk IE, Edge, dan Firefox */
+      html,
+      body {
+        -ms-overflow-style: none; /* IE dan Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
 
     <script>
       tailwind.config = {
@@ -123,8 +136,10 @@
       alt="Gold Sparkle Texture"
     />
 
-    <!-- NAVBAR dengan efek Glassmorphism menyatu dengan Section lain -->
-    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+    <!-- NAVBAR dengan efek Glassmorphism menyatu dengan Section lain (Z-INDEX DIPERBAIKI) -->
+    <nav
+      class="fixed w-full top-0 z-[60] glass-nav transition-all duration-300"
+    >
       <div
         class="max-w-[1400px] mx-auto px-6 py-4 flex justify-between items-center relative z-50"
       >
@@ -184,10 +199,10 @@
       </div>
     </nav>
 
-    <!-- MOBILE MENU -->
+    <!-- MOBILE MENU (Z-INDEX DIPERBAIKI KE z-[55] AGAR TIDAK TERTUTUP FOTO/TEKS) -->
     <div
       id="mobile-menu"
-      class="fixed inset-0 bg-red-dark/95 backdrop-blur-lg z-40 opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col items-center justify-center gap-8 text-sm md:text-base font-bold tracking-[0.2em] uppercase text-gold-light/90"
+      class="fixed inset-0 bg-red-dark/95 backdrop-blur-lg z-[55] opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col items-center justify-center gap-8 text-sm md:text-base font-bold tracking-[0.2em] uppercase text-gold-light/90"
     >
       <a href="#about" class="mobile-link hover:text-gold-base transition"
         >Profil</a
@@ -220,28 +235,25 @@
     <!-- HERO SECTION -->
     <section class="relative h-[100dvh] min-h-[600px] w-full overflow-hidden">
       <!-- ASSET EMAS YANG MENGALIR KE SECTION BAWAHNYA -->
-      <!-- 1.png (Debu Emas) tembus ke bawah/kiri -->
       <img
         src="img/asset/1.png"
         class="absolute -bottom-10 md:-bottom-20 -left-10 w-[90%] md:w-[50%] max-w-[800px] opacity-80 pointer-events-none z-0"
         alt="Gold Sparkles"
       />
 
-      <!-- 3.png (Garis Cahaya Emas) menyilang dari kanan atas -->
       <img
         src="img/asset/3.png"
         class="absolute top-20 -right-20 w-[120%] md:w-[70%] max-w-[1000px] opacity-90 pointer-events-none z-0 transform rotate-12"
         alt="Gold Line"
       />
 
-      <!-- 2.png (Grup Kupu-Kupu Emas) digeser agar tidak menabrak teks -->
       <img
         src="img/asset/2.png"
         class="absolute top-[12%] left-[5%] md:top-[20%] md:left-[40%] w-24 md:w-48 opacity-80 pointer-events-none animate-float z-10 drop-shadow-[0_0_15px_rgba(212,175,55,0.8)]"
         alt="Gold Butterflies"
       />
 
-      <!-- FOTO MC DIPISAH DARI CONTAINER TEXT AGAR BENAR-BENAR NEMPEL BAWAH LAYAR -->
+      <!-- FOTO MC -->
       <div
         class="absolute bottom-0 left-1/2 transform -translate-x-1/2 md:left-[5%] lg:left-[10%] md:translate-x-0 w-[95vw] max-w-[450px] h-[75vh] md:w-[550px] lg:w-[650px] md:h-[85vh] z-40 pointer-events-none drop-shadow-[0_0_50px_rgba(212,175,55,0.5)] flex items-end justify-center md:justify-start"
       >
@@ -267,11 +279,10 @@
         </h1>
       </div>
 
-      <!-- CONTAINER UNTUK TEXT DI BUAT RELATIVE BIASA AGAR CHILDREN BEBAS MENGATUR Z-INDEX MASING-MASING -->
       <div
         class="relative w-full max-w-[1400px] mx-auto h-full pt-20 px-4 md:px-12 flex flex-col justify-center pointer-events-none"
       >
-        <!-- TEKS KIRI (MASTER OF CEREMONY) - Z-INDEX 50 (DI DEPAN FOTO) -->
+        <!-- TEKS KIRI (MASTER OF CEREMONY) -->
         <div
           class="absolute bottom-[12%] md:bottom-[15%] left-5 md:left-20 z-50 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
         >
@@ -282,7 +293,7 @@
           </h2>
         </div>
 
-        <!-- TEKS KANAN (REYZA HALIM) - Z-INDEX 30 (DI BELAKANG FOTO) -->
+        <!-- TEKS KANAN (REYZA HALIM) -->
         <div
           class="absolute top-[18%] md:top-[35%] right-5 md:right-12 z-30 text-right reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-400"
         >
@@ -310,7 +321,7 @@
           <span
             class="w-2 h-2 rounded-full bg-gold-base animate-pulse shadow-[0_0_10px_#D4AF37]"
           ></span>
-          TERSEDIA UNTUK BOOKING 2026
+          TERSEDIA UNTUK BOOKING 2026-2027
         </div>
         <div
           class="flex gap-6 opacity-100 text-gold-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] bg-red-dark/30 md:bg-transparent px-3 py-1 rounded-full md:p-0 backdrop-blur-sm md:backdrop-blur-none border border-gold-base/20 md:border-none pointer-events-auto"
@@ -346,7 +357,6 @@
       id="about"
       class="py-20 md:py-32 px-6 max-w-[1400px] mx-auto relative z-10"
     >
-      <!-- ASSET EMAS: Menyatu dengan konten -->
       <img
         src="img/asset/5.png"
         class="absolute bottom-0 right-10 w-20 md:w-32 opacity-80 pointer-events-none animate-float-delayed z-[-1] drop-shadow-[0_0_15px_rgba(212,175,55,0.8)]"
@@ -453,7 +463,6 @@
       id="services"
       class="py-16 md:py-24 px-6 max-w-[1400px] mx-auto relative z-10"
     >
-      <!-- ASSET EMAS SERVICES -->
       <img
         src="img/asset/3.png"
         class="absolute top-0 -left-40 w-[120%] max-w-[1200px] opacity-40 pointer-events-none z-[-1] transform -rotate-6"
@@ -479,12 +488,10 @@
         </h2>
       </div>
 
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8"
-      >
+      <div class="flex flex-wrap justify-center gap-6 md:gap-8">
         <!-- Layanan 1: Wedding -->
         <div
-          class="pricing-card glass-panel text-gold-light p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer md:hover:-translate-y-3 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[0ms]"
+          class="pricing-card w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] glass-panel text-gold-light p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer md:hover:-translate-y-3 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[0ms]"
         >
           <h3
             class="font-display text-2xl md:text-3xl mb-3 pricing-title font-bold uppercase"
@@ -523,14 +530,14 @@
           </ul>
         </div>
 
-        <!-- Layanan 2: Engagement & Siraman (Active) -->
+        <!-- Layanan 2: Engagement (Active Default) -->
         <div
-          class="pricing-card bg-gradient-to-b from-gold-base to-gold-dark text-red-dark border border-gold-light/50 shadow-[0_20px_40px_rgba(212,175,55,0.4)] md:-translate-y-4 p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100 is-active"
+          class="pricing-card w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] bg-gradient-to-b from-gold-base to-gold-dark text-red-dark border border-gold-light/50 shadow-[0_20px_40px_rgba(212,175,55,0.4)] md:-translate-y-4 p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100 is-active"
         >
           <h3
             class="font-display text-2xl md:text-3xl mb-3 pricing-title font-bold uppercase drop-shadow-md"
           >
-            Engagement & Siraman
+            Engagement
           </h3>
           <p
             class="font-body text-[10px] md:text-xs uppercase tracking-[0.2em] mb-3 text-red-dark/90 font-bold pricing-subtitle"
@@ -561,25 +568,108 @@
               <span class="text-red-dark pricing-icon drop-shadow-sm mt-0.5"
                 >✦</span
               >
-              <span>MC Opening, Ngaras, Siraman & Saweran</span>
+              <span>Sesi Tukar Cincin & Ramah Tamah</span>
             </li>
             <li class="flex gap-3 items-start pt-2">
               <span class="text-red-dark pricing-icon drop-shadow-sm mt-0.5"
                 >✦</span
               >
-              <span>Paket All-in (MC + WO 3 Crew)</span>
+              <span>Paket All-in (MC + WO 3 Crew) Tersedia</span>
             </li>
           </ul>
         </div>
 
-        <!-- Layanan 3: Corporate & Event -->
+        <!-- Layanan 3: Siraman -->
         <div
-          class="pricing-card glass-panel text-gold-light p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer md:hover:-translate-y-3 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200 sm:col-span-2 md:col-span-1"
+          class="pricing-card w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] glass-panel text-gold-light p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer md:hover:-translate-y-3 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
         >
           <h3
             class="font-display text-2xl md:text-3xl mb-3 pricing-title font-bold uppercase"
           >
-            Corporate & All Event
+            Siraman
+          </h3>
+          <p
+            class="font-body text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-3 text-gold-base pricing-subtitle"
+          >
+            Hubungi Kami
+          </p>
+          <p
+            class="font-body text-[10px] uppercase tracking-widest mb-8 opacity-80 font-light border-b border-gold-base/20 pb-4"
+          >
+            <span class="text-base align-middle leading-none">&infin;</span> Jam
+            (Kondisional)
+          </p>
+          <ul
+            class="font-body text-xs md:text-sm space-y-4 opacity-95 mb-8 font-light"
+          >
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>Full Acara Dipandu Awal - Akhir</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>MC Opening Acara & Doa Bersama</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>Prosesi Ngaras & Siraman Suci</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>Acara Saweran & Momen Kekeluargaan</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Layanan 4: Intimate Wedding -->
+        <div
+          class="pricing-card w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] glass-panel text-gold-light p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer md:hover:-translate-y-3 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-300"
+        >
+          <h3
+            class="font-display text-2xl md:text-3xl mb-3 pricing-title font-bold uppercase"
+          >
+            Intimate Wedding
+          </h3>
+          <p
+            class="font-body text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-3 text-gold-base pricing-subtitle"
+          >
+            Hubungi Kami
+          </p>
+          <p
+            class="font-body text-[10px] uppercase tracking-widest mb-8 opacity-80 font-light border-b border-gold-base/20 pb-4"
+          >
+            Max 4 Jam Kerja
+          </p>
+          <ul
+            class="font-body text-xs md:text-sm space-y-4 opacity-95 mb-8 font-light"
+          >
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>Konsep Acara Intim & Eksklusif</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>MC Akad & Resepsi Skala Privat</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>Intimate Games bersama Sahabat & Keluarga</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-gold-base pricing-icon mt-0.5">✦</span>
+              <span>Membangun Warm & Personal Atmosphere</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Layanan 5: Corporate & Birthday -->
+        <div
+          class="pricing-card w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] glass-panel text-gold-light p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 cursor-pointer md:hover:-translate-y-3 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] ease-[cubic-bezier(0.22,1,0.36,1)] delay-400"
+        >
+          <h3
+            class="font-display text-2xl md:text-3xl mb-3 pricing-title font-bold uppercase"
+          >
+            MC ALL EVENT
           </h3>
           <p
             class="font-body text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-3 text-gold-base pricing-subtitle"
@@ -596,7 +686,7 @@
           >
             <li class="flex gap-3 items-start">
               <span class="text-gold-base pricing-icon mt-0.5">✦</span>
-              <span>Festival & Lomba Musik</span>
+              <span>Birthday Party & Sweet Seventeen</span>
             </li>
             <li class="flex gap-3 items-start">
               <span class="text-gold-base pricing-icon mt-0.5">✦</span>
@@ -604,11 +694,11 @@
             </li>
             <li class="flex gap-3 items-start">
               <span class="text-gold-base pricing-icon mt-0.5">✦</span>
-              <span>Rapat Kerja Tahunan</span>
+              <span>Rapat Kerja Tahunan & Launching Product</span>
             </li>
             <li class="flex gap-3 items-start">
               <span class="text-gold-base pricing-icon mt-0.5">✦</span>
-              <span>Launching Product & Class Cooking</span>
+              <span>Festival & Lomba Musik</span>
             </li>
           </ul>
         </div>
@@ -778,7 +868,6 @@
       id="gallery"
       class="py-16 md:py-32 px-6 max-w-[1400px] mx-auto relative z-10"
     >
-      <!-- ASSET EMAS GALLERY -->
       <img
         src="img/asset/2.png"
         class="absolute top-20 right-10 w-24 opacity-80 pointer-events-none animate-float z-[-1]"
@@ -819,13 +908,244 @@
         </button>
       </div>
 
+      <!-- KONTINER FOTO -->
       <div
         id="portfolio-foto"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 transition-opacity duration-500 relative"
+        class="flex flex-wrap justify-center gap-8 md:gap-10 transition-opacity duration-500 relative w-full"
       >
+        <!-- Portofolio 5: Akad & Resepsi (DIPINDAHKAN KE ATAS SESUAI ARAHAN) -->
+        <div
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+          >
+            <button
+              class="btn-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/wedding/1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Akad & Resepsi"
+              />
+              <img
+                src="img/wedding/3.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Akad & Resepsi"
+              />
+              <img
+                src="img/wedding/4.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Akad & Resepsi"
+              />
+            </div>
+            <button
+              class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
+          >
+            Akad & Resepsi
+          </h3>
+          <p
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
+          >
+            Akad & Resepsi - Sukabumi
+          </p>
+        </div>
+
+        <!-- Portofolio Baru 1: Intimate Wedding -->
+        <div
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[0ms]"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+          >
+            <button
+              class="btn-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/Intimate Wedding/1.jpeg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Intimate Wedding Sukabumi"
+              />
+              <img
+                src="img/Intimate Wedding/2.jpeg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Intimate Wedding Sukabumi"
+              />
+              <img
+                src="img/Intimate Wedding/3.jpeg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Intimate Wedding Sukabumi"
+              />
+            </div>
+            <button
+              class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
+          >
+            Intimate Wedding
+          </h3>
+          <p
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
+          >
+            Sukabumi
+          </p>
+        </div>
+
+        <!-- Portofolio Baru 2: Intimate Engagement -->
+        <div
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+          >
+            <button
+              class="btn-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/Intimate Engagement/1.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Intimate Engagement Sukabumi"
+              />
+              <img
+                src="img/Intimate Engagement/2.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Intimate Engagement Sukabumi"
+              />
+              <img
+                src="img/Intimate Engagement/3.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Intimate Engagement Sukabumi"
+              />
+              <img
+                src="img/Intimate Engagement/4.jpg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Intimate Engagement Sukabumi"
+              />
+            </div>
+            <button
+              class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
+          >
+            Intimate Engagement
+          </h3>
+          <p
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
+          >
+            Sukabumi
+          </p>
+        </div>
+
         <!-- Portofolio 1: Dwiharta Logistindo -->
         <div
-          class="flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[0ms]"
         >
           <div
             class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
@@ -892,7 +1212,7 @@
             Gala Dinner & Raker
           </h3>
           <p
-            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1"
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
           >
             Dwiharta Logistindo - Anyer
           </p>
@@ -900,7 +1220,7 @@
 
         <!-- Portofolio 2: Gudang Garam Merah -->
         <div
-          class="flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
         >
           <div
             class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
@@ -967,7 +1287,7 @@
             Festival & Lomba Musik
           </h3>
           <p
-            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1"
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
           >
             Gudang Garam - Cianjur
           </p>
@@ -975,7 +1295,7 @@
 
         <!-- Portofolio 3: Sweet 17 Vareta -->
         <div
-          class="flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
         >
           <div
             class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
@@ -1002,12 +1322,12 @@
               class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
             >
               <img
-                src="img/HBD/1.jpg"
+                src="img/HBD/1.jpeg"
                 class="snap-center w-full h-full object-cover flex-shrink-0"
                 alt="Sweet 17 Vareta"
               />
               <img
-                src="img/HBD/2.jpg"
+                src="img/HBD/4.jpg"
                 class="snap-center w-full h-full object-cover flex-shrink-0"
                 alt="Sweet 17 Vareta"
               />
@@ -1042,7 +1362,7 @@
             Birthday Party Sweet 17
           </h3>
           <p
-            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1"
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
           >
             Láska Hotel - Ciletuh
           </p>
@@ -1050,7 +1370,7 @@
 
         <!-- Portofolio 4: Kemerdekaan Cibubur -->
         <div
-          class="flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[0ms]"
         >
           <div
             class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
@@ -1117,90 +1437,15 @@
             PHBN 17 Agustus
           </h3>
           <p
-            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1"
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
           >
             Cibubur - Jakarta Timur
           </p>
         </div>
 
-        <!-- Portofolio 5: Akad & Resepsi -->
-        <div
-          class="flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
-        >
-          <div
-            class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
-          >
-            <button
-              class="btn-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2.5"
-                stroke="currentColor"
-                class="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
-            <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
-            >
-              <img
-                src="img/Wedding/1.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Akad & Resepsi"
-              />
-              <img
-                src="img/wedding/3.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Akad & Resepsi"
-              />
-              <img
-                src="img/wedding/4.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Akad & Resepsi"
-              />
-            </div>
-            <button
-              class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2.5"
-                stroke="currentColor"
-                class="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-          </div>
-          <h3
-            class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
-          >
-            Akad & Resepsi
-          </h3>
-          <p
-            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1"
-          >
-            Akad & Resepsi - Sukabumi
-          </p>
-        </div>
-
         <!-- Portofolio 6: Polres Sukabumi -->
         <div
-          class="flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
         >
           <div
             class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
@@ -1267,14 +1512,89 @@
             Gathering Anniversary
           </h3>
           <p
-            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1"
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
           >
             Polres Sukabumi Kota
           </p>
         </div>
+
+        <!-- Portofolio 7: Gathering Ibu Bhayangkari -->
+        <div
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[0ms]"
+        >
+          <div
+            class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group border border-gold-base/30 bg-red-dark shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+          >
+            <button
+              class="btn-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <img
+                src="img/BHAYANGKARI/1.jpeg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Gathering Ibu Bhayangkari"
+              />
+              <img
+                src="img/BHAYANGKARI/2.jpeg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Gathering Ibu Bhayangkari"
+              />
+              <img
+                src="img/BHAYANGKARI/3.jpeg"
+                class="snap-center w-full h-full object-cover flex-shrink-0"
+                alt="Gathering Ibu Bhayangkari"
+              />
+            </div>
+            <button
+              class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
+          >
+            Gathering Bhayangkari
+          </h3>
+          <p
+            class="font-body text-[10px] text-gold-base font-semibold tracking-widest uppercase mt-1 text-center"
+          >
+            Secapa Polri - Láska Hotel
+          </p>
+        </div>
       </div>
 
-      <!-- Bagian Video Baru (Sesuai Kategori IG Reels, Rata Tengah Otomatis & Lazy Loading) -->
+      <!-- Bagian Video -->
       <div
         id="portfolio-video"
         class="flex flex-wrap justify-center gap-8 hidden transition-opacity duration-500 mt-8 relative z-10 w-full"
@@ -1659,7 +1979,105 @@
           <h3
             class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
           >
-            Engagement
+            Intimate Engagement
+          </h3>
+        </div>
+
+        <div
+          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+        >
+          <div
+            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+          >
+            <button
+              class="btn-prev absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+            >
+              <!-- Video 1 (Reel - Fixed) -->
+              <div
+                class="snap-center w-full flex-none h-full relative bg-black"
+              >
+                <iframe
+                  src="https://www.instagram.com/reel/DTw8q1ZEibD/embed"
+                  class="absolute inset-0 w-full h-full pointer-events-auto border-0"
+                  frameborder="0"
+                  scrolling="no"
+                  allowtransparency="true"
+                  allow="encrypted-media"
+                  loading="lazy"
+                ></iframe>
+              </div>
+
+              <!-- Video 2 (Story Highlight - Mungkin tidak didukung IG) -->
+              <div
+                class="snap-center w-full flex-none h-full relative bg-black"
+              >
+                <iframe
+                  src="https://www.instagram.com/reel/DdIr0Nbza_9/embed"
+                  class="absolute inset-0 w-full h-full pointer-events-auto border-0"
+                  frameborder="0"
+                  scrolling="no"
+                  allowtransparency="true"
+                  allow="encrypted-media"
+                  loading="lazy"
+                ></iframe>
+              </div>
+
+              <!-- Video 3 (Reel - Fixed) -->
+              <div
+                class="snap-center w-full flex-none h-full relative bg-black"
+              >
+                <iframe
+                  src="https://www.instagram.com/reel/DXgmt4bv0cK/embed"
+                  class="absolute inset-0 w-full h-full pointer-events-auto border-0"
+                  frameborder="0"
+                  scrolling="no"
+                  allowtransparency="true"
+                  allow="encrypted-media"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+            <button
+              class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4 md:w-5 md:h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <h3
+            class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
+          >
+            Intimate Wedding
           </h3>
         </div>
 
@@ -2057,87 +2475,6 @@
             All Events
           </h3>
         </div>
-
-        <!-- 10. Vidio Intimate Wedding & Engagement -->
-        <div
-          class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
-        >
-          <div
-            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
-          >
-            <button
-              class="btn-prev absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2.5"
-                stroke="currentColor"
-                class="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
-            <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
-            >
-              <div
-                class="snap-center w-full flex-none h-full relative bg-black"
-              >
-                <iframe
-                  src="https://www.instagram.com/reel/DC8dM0pBlkI/embed"
-                  class="absolute inset-0 w-full h-full pointer-events-auto border-0"
-                  frameborder="0"
-                  scrolling="no"
-                  allowtransparency="true"
-                  allow="encrypted-media"
-                  loading="lazy"
-                ></iframe>
-              </div>
-              <div
-                class="snap-center w-full flex-none h-full relative bg-black"
-              >
-                <iframe
-                  src="https://www.instagram.com/reel/DPKqnWHky3s/embed"
-                  class="absolute inset-0 w-full h-full pointer-events-auto border-0"
-                  frameborder="0"
-                  scrolling="no"
-                  allowtransparency="true"
-                  allow="encrypted-media"
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </div>
-            <button
-              class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2.5"
-                stroke="currentColor"
-                class="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-          </div>
-          <h3
-            class="mt-5 font-display text-lg md:text-xl font-bold tracking-wide text-center uppercase text-gold-light"
-          >
-            Intimate Session
-          </h3>
-        </div>
       </div>
     </section>
 
@@ -2246,7 +2583,7 @@
       </div>
     </section>
 
-    <!-- SECTION KLIEN / KOLABORASI (DENGAN 20 LOGO PENUH) -->
+    <!-- SECTION KLIEN / KOLABORASI -->
     <section
       id="clients"
       class="py-16 md:py-24 px-6 max-w-[1400px] mx-auto relative z-10"
@@ -2573,6 +2910,7 @@
     </section>
 
     <!-- PENGHARGAAN -->
+
     <section
       id="penghargaan"
       class="py-16 md:py-24 px-6 max-w-[1400px] mx-auto relative z-10"
@@ -2605,86 +2943,238 @@
         </p>
       </div>
 
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8"
-      >
+      <div class="flex flex-wrap justify-center gap-5 md:gap-8 w-full">
+        <!-- Card 1 -->
         <div
-          class="glass-panel p-5 rounded-2xl text-center group hover:-translate-y-3 transition duration-300 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          class="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(25%-1.5rem)] glass-panel p-5 rounded-2xl text-center group hover:-translate-y-3 transition duration-300 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
         >
+          <!-- MENGGUNAKAN OBJECT-COVER & OVERFLOW-HIDDEN AGAR FIT GRID -->
           <div
-            class="w-full aspect-[4/3] bg-red-dark/50 rounded-xl flex items-center justify-center mb-5 overflow-hidden"
+            class="relative w-full aspect-[4/3] bg-red-dark/50 rounded-xl mb-5 overflow-hidden group/slider"
           >
-            <img
-              src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
-              alt="Sertifikat 1"
-            />
+            <!-- Tombol Prev -->
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-gold-base text-white hover:text-black p-1.5 rounded-full opacity-100 md:opacity-0 group-hover/slider:opacity-100 transition-all cursor-pointer backdrop-blur-sm"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+
+            <!-- Image Carousel Container -->
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <!-- Gambar 1 -->
+              <div
+                class="snap-center w-full flex-none h-full relative overflow-hidden"
+              >
+                <img
+                  src="img/Finalis/1.jpeg"
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  alt="Sertifikat 1 - Slide 1"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <!-- Gambar 2 -->
+              <div
+                class="snap-center w-full flex-none h-full relative overflow-hidden"
+              >
+                <img
+                  src="img/Finalis/2.jpeg"
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  alt="Sertifikat 1 - Slide 2"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <!-- Gambar 3 -->
+              <div
+                class="snap-center w-full flex-none h-full relative overflow-hidden"
+              >
+                <img
+                  src="img/Finalis/3.jpeg"
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  alt="Sertifikat 1 - Slide 3"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+            </div>
+
+            <!-- Tombol Next -->
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-gold-base text-white hover:text-black p-1.5 rounded-full opacity-100 md:opacity-0 group-hover/slider:opacity-100 transition-all cursor-pointer backdrop-blur-sm"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
           </div>
           <h4
             class="font-display text-base md:text-lg font-bold text-gold-light leading-snug"
           >
-            Sertifikasi MC Profesional
+            Finalis MC favorite - komunitas MC indonesia 2026
           </h4>
         </div>
 
+        <!-- Card 2 -->
         <div
-          class="glass-panel p-5 rounded-2xl text-center group hover:-translate-y-3 transition duration-300 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
+          class="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(25%-1.5rem)] glass-panel p-5 rounded-2xl text-center group hover:-translate-y-3 transition duration-300 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
         >
+          <!-- MENGGUNAKAN OBJECT-COVER & OVERFLOW-HIDDEN AGAR FIT GRID -->
           <div
-            class="w-full aspect-[4/3] bg-red-dark/50 rounded-xl flex items-center justify-center mb-5 overflow-hidden"
+            class="relative w-full aspect-[4/3] bg-red-dark/50 rounded-xl mb-5 overflow-hidden group/slider"
           >
-            <img
-              src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
-              alt="Sertifikat 2"
-            />
-          </div>
-          <h4
-            class="font-display text-base md:text-lg font-bold text-gold-light leading-snug"
-          >
-            Master of Ceremony Workshop
-          </h4>
-        </div>
+            <!-- Tombol Prev -->
+            <button
+              class="btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-gold-base text-white hover:text-black p-1.5 rounded-full opacity-100 md:opacity-0 group-hover/slider:opacity-100 transition-all cursor-pointer backdrop-blur-sm"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
 
-        <div
-          class="glass-panel p-5 rounded-2xl text-center group hover:-translate-y-3 transition duration-300 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
-        >
-          <div
-            class="w-full aspect-[4/3] bg-red-dark/50 rounded-xl flex items-center justify-center mb-5 overflow-hidden"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
-              alt="Sertifikat 3"
-            />
-          </div>
-          <h4
-            class="font-display text-base md:text-lg font-bold text-gold-light leading-snug"
-          >
-            Penghargaan MC Terfavorit
-          </h4>
-        </div>
+            <!-- Image Carousel Container -->
+            <div
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+            >
+              <!-- Gambar 1 -->
+              <div
+                class="snap-center w-full flex-none h-full relative overflow-hidden"
+              >
+                <img
+                  src="img/Finalis/4.jpeg"
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  alt="Sertifikat 2 - Slide 1"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <!-- Gambar 2 -->
+              <div
+                class="snap-center w-full flex-none h-full relative overflow-hidden"
+              >
+                <img
+                  src="img/Finalis/5.jpeg"
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  alt="Sertifikat 2 - Slide 2"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <!-- Gambar 3 -->
+              <div
+                class="snap-center w-full flex-none h-full relative overflow-hidden"
+              >
+                <img
+                  src="img/Finalis/6.jpeg"
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  alt="Sertifikat 2 - Slide 3"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+            </div>
 
-        <div
-          class="glass-panel p-5 rounded-2xl text-center group hover:-translate-y-3 transition duration-300 reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-300"
-        >
-          <div
-            class="w-full aspect-[4/3] bg-red-dark/50 rounded-xl flex items-center justify-center mb-5 overflow-hidden"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1589330694653-afa59f46f36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
-              alt="Sertifikat 4"
-            />
+            <!-- Tombol Next -->
+            <button
+              class="btn-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-gold-base text-white hover:text-black p-1.5 rounded-full opacity-100 md:opacity-0 group-hover/slider:opacity-100 transition-all cursor-pointer backdrop-blur-sm"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
           </div>
           <h4
             class="font-display text-base md:text-lg font-bold text-gold-light leading-snug"
           >
-            Public Speaking Workshop
+            Finalis MC berbakat - komunitas MC 2026
           </h4>
         </div>
       </div>
     </section>
+
+    <!-- KODE MODAL LIGHTBOX (UKURAN SEDANG & POSISI TENGAH) -->
+    <div
+      id="galleryModal"
+      class="fixed inset-0 z-[9999] hidden bg-black/95 backdrop-blur-xl overflow-y-auto cursor-zoom-out transition-opacity duration-300 opacity-0"
+      onclick="closeImageModal()"
+    >
+      <!-- Tombol Close -->
+      <button
+        class="fixed top-4 right-4 md:top-8 md:right-8 text-gold-base bg-red-dark/80 hover:bg-gold-base hover:text-red-dark rounded-full p-2 transition-all duration-300 focus:outline-none z-[10000] border border-gold-base/50 shadow-[0_0_15px_rgba(212,175,55,0.5)]"
+        onclick="closeImageModal()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 md:h-8 md:w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+
+      <!-- Wrapper Gambar (Dibuat center secara vertikal dan horizontal) -->
+      <div
+        class="min-h-full w-full flex items-center justify-center p-4 md:p-10"
+      >
+        <!-- GAMBAR DISET UKURAN SEDANG -->
+        <img
+          id="modalImage"
+          src=""
+          alt="Bukti Sertifikat"
+          class="max-w-full md:max-w-3xl lg:max-w-4xl max-h-[85vh] w-auto h-auto object-contain rounded-xl shadow-[0_0_50px_rgba(212,175,55,0.2)] transform scale-95 transition-transform duration-300 cursor-default"
+          onclick="event.stopPropagation()"
+        />
+      </div>
+    </div>
 
     <!-- CONTACT -->
     <section
@@ -2940,6 +3430,41 @@
     </footer>
 
     <script>
+      // DITAMBAHKAN FUNGSI LIGHTBOX DISINI (Di luar DOMContentLoaded agar terbaca oleh HTML onClick)
+      function openImageModal(src) {
+        const modal = document.getElementById("galleryModal");
+        const modalImg = document.getElementById("modalImage");
+
+        modalImg.src = src;
+        modal.classList.remove("hidden");
+
+        setTimeout(() => {
+          modal.classList.remove("opacity-0");
+          modal.classList.add("opacity-100");
+          modalImg.classList.remove("scale-95");
+          modalImg.classList.add("scale-100");
+        }, 10);
+
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeImageModal() {
+        const modal = document.getElementById("galleryModal");
+        const modalImg = document.getElementById("modalImage");
+
+        modal.classList.remove("opacity-100");
+        modal.classList.add("opacity-0");
+        modalImg.classList.remove("scale-100");
+        modalImg.classList.add("scale-95");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          modalImg.src = "";
+        }, 300);
+
+        document.body.style.overflow = "auto";
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         // 1. Mobile Menu Logic
         const btn = document.getElementById("mobile-menu-btn");
@@ -2969,7 +3494,9 @@
           }
         }
 
-        btn.addEventListener("click", toggleMenu);
+        if (btn) {
+          btn.addEventListener("click", toggleMenu);
+        }
         links.forEach((link) => {
           link.addEventListener("click", () => {
             if (isMenuOpen) toggleMenu();
@@ -2979,10 +3506,12 @@
         // Navbar scroll effect
         window.addEventListener("scroll", () => {
           const nav = document.querySelector("nav");
-          if (window.scrollY > 50) {
-            nav.classList.add("shadow-[0_4px_30px_rgba(0,0,0,0.3)]");
-          } else {
-            nav.classList.remove("shadow-[0_4px_30px_rgba(0,0,0,0.3)]");
+          if (nav) {
+            if (window.scrollY > 50) {
+              nav.classList.add("shadow-[0_4px_30px_rgba(0,0,0,0.3)]");
+            } else {
+              nav.classList.remove("shadow-[0_4px_30px_rgba(0,0,0,0.3)]");
+            }
           }
         });
 
