@@ -13,21 +13,6 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* Sembunyikan scrollbar untuk Chrome, Safari, dan Opera */
-      ::-webkit-scrollbar {
-        display: none;
-      }
-
-      /* Sembunyikan scrollbar untuk IE, Edge, dan Firefox */
-      html,
-      body {
-        -ms-overflow-style: none;
-        /* IE dan Edge */
-        scrollbar-width: none;
-        /* Firefox */
-      }
-    </style>
 
     <script>
       tailwind.config = {
@@ -67,27 +52,22 @@
       };
     </script>
     <style>
+      /* Sembunyikan scrollbar sepenuhnya untuk Chrome, Safari, dan Opera */
+      ::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+
+      /* Sembunyikan scrollbar untuk IE, Edge, dan Firefox */
+      * {
+        -ms-overflow-style: none !important; /* IE and Edge */
+        scrollbar-width: none !important; /* Firefox */
+      }
+
       body {
         background-color: #2a0000;
         color: #fdf5e6;
-      }
-
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: #1a0000;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: #d4af37;
-        border-radius: 10px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: #fbea9d;
       }
 
       /* Hide Details Marker */
@@ -941,23 +921,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/wedding/1.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Akad & Resepsi"
-              />
-              <img
-                src="img/wedding/3.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Akad & Resepsi"
-              />
-              <img
-                src="img/wedding/4.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Akad & Resepsi"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/wedding/1.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Akad & Resepsi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/wedding/3.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Akad & Resepsi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/wedding/4.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Akad & Resepsi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1016,23 +1005,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/Intimate Wedding/1.jpeg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Intimate Wedding Sukabumi"
-              />
-              <img
-                src="img/Intimate Wedding/2.jpeg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Intimate Wedding Sukabumi"
-              />
-              <img
-                src="img/Intimate Wedding/3.jpeg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Intimate Wedding Sukabumi"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/Intimate Wedding/1.jpeg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Intimate Wedding Sukabumi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/Intimate Wedding/2.jpeg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Intimate Wedding Sukabumi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/Intimate Wedding/3.jpeg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Intimate Wedding Sukabumi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1091,28 +1089,40 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/Intimate Engagement/1.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Intimate Engagement Sukabumi"
-              />
-              <img
-                src="img/Intimate Engagement/2.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Intimate Engagement Sukabumi"
-              />
-              <img
-                src="img/Intimate Engagement/3.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Intimate Engagement Sukabumi"
-              />
-              <img
-                src="img/Intimate Engagement/4.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Intimate Engagement Sukabumi"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/Intimate Engagement/1.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Intimate Engagement Sukabumi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/Intimate Engagement/2.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Intimate Engagement Sukabumi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/Intimate Engagement/3.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Intimate Engagement Sukabumi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/Intimate Engagement/4.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Intimate Engagement Sukabumi"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1171,23 +1181,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/GALA/1.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gala Dinner Dwiharta"
-              />
-              <img
-                src="img/GALA/2.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gala Dinner Dwiharta"
-              />
-              <img
-                src="img/GALA/3.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gala Dinner Dwiharta"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/GALA/1.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gala Dinner Dwiharta"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/GALA/2.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gala Dinner Dwiharta"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/GALA/3.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gala Dinner Dwiharta"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1246,23 +1265,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/MUSIK/1.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Festival Gudang Garam"
-              />
-              <img
-                src="img/MUSIK/2.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Festival Gudang Garam"
-              />
-              <img
-                src="img/MUSIK/3.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Festival Gudang Garam"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/MUSIK/1.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Festival Gudang Garam"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/MUSIK/2.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Festival Gudang Garam"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/MUSIK/3.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Festival Gudang Garam"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1321,23 +1349,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/HBD/1.jpeg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Sweet 17 Vareta"
-              />
-              <img
-                src="img/HBD/4.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Sweet 17 Vareta"
-              />
-              <img
-                src="img/HBD/3.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Sweet 17 Vareta"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/HBD/1.jpeg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Sweet 17 Vareta"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/HBD/4.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Sweet 17 Vareta"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/HBD/3.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Sweet 17 Vareta"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1396,23 +1433,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/KEMERDEKAAN/1.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="PHBN 17 Agustus"
-              />
-              <img
-                src="img/KEMERDEKAAN/2.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="PHBN 17 Agustus"
-              />
-              <img
-                src="img/KEMERDEKAAN/3.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="PHBN 17 Agustus"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/KEMERDEKAAN/1.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="PHBN 17 Agustus"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/KEMERDEKAAN/2.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="PHBN 17 Agustus"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/KEMERDEKAAN/3.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="PHBN 17 Agustus"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1471,23 +1517,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/POLRES/1.png"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gathering Polres"
-              />
-              <img
-                src="img/POLRES/2.jpg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gathering Polres"
-              />
-              <img
-                src="img/POLRES/3.png"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gathering Polres"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/POLRES/1.png"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gathering Polres"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/POLRES/2.jpg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gathering Polres"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/POLRES/3.png"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gathering Polres"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1546,23 +1601,32 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
-              <img
-                src="img/BHAYANGKARI/1.jpeg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gathering Ibu Bhayangkari"
-              />
-              <img
-                src="img/BHAYANGKARI/2.jpeg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gathering Ibu Bhayangkari"
-              />
-              <img
-                src="img/BHAYANGKARI/3.jpeg"
-                class="snap-center w-full h-full object-cover flex-shrink-0"
-                alt="Gathering Ibu Bhayangkari"
-              />
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/BHAYANGKARI/1.jpeg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gathering Ibu Bhayangkari"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/BHAYANGKARI/2.jpeg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gathering Ibu Bhayangkari"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+              <div class="snap-center w-full flex-none h-full relative overflow-hidden group/item">
+                <img
+                  src="img/BHAYANGKARI/3.jpeg"
+                  class="w-full h-full object-cover opacity-90 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
+                  alt="Gathering Ibu Bhayangkari"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
             </div>
             <button
               class="btn-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-red-dark/80 text-gold-base p-2 rounded-full opacity-80 hover:opacity-100 hover:bg-gold-base hover:text-red-dark transition-all backdrop-blur-sm cursor-pointer border border-gold-base/40"
@@ -1627,7 +1691,7 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y relative z-10"
             >
               <div
                 class="snap-center w-full flex-none h-full relative bg-black"
@@ -1760,7 +1824,7 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y relative z-10"
             >
               <div
                 class="snap-center w-full flex-none h-full relative bg-black"
@@ -1846,7 +1910,7 @@
           class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
         >
           <div
-            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)] touch-pan-y"
           >
             <iframe
               src="https://www.instagram.com/reel/DVDfKZgkiSx/embed"
@@ -1891,7 +1955,7 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y relative z-10"
             >
               <div
                 class="snap-center w-full flex-none h-full relative bg-black"
@@ -2010,7 +2074,7 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y relative z-10"
             >
               <!-- Video 1 (Reel - Fixed) -->
               <div
@@ -2088,7 +2152,7 @@
           class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
         >
           <div
-            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)] touch-pan-y"
           >
             <iframe
               src="https://www.instagram.com/reel/Db4vnMiRCb_/embed"
@@ -2112,7 +2176,7 @@
           class="flex flex-col items-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
         >
           <div
-            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)]"
+            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden group border border-gold-base/30 bg-black shadow-[0_10px_20px_rgba(0,0,0,0.4)] touch-pan-y"
           >
             <iframe
               src="https://www.instagram.com/reel/DS7IpnYkrp_/embed"
@@ -2157,7 +2221,7 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y relative z-10"
             >
               <div
                 class="snap-center w-full flex-none h-full relative bg-black"
@@ -2290,7 +2354,7 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y relative z-10"
             >
               <div
                 class="snap-center w-full flex-none h-full relative bg-black"
@@ -2410,7 +2474,7 @@
               </svg>
             </button>
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth relative z-10"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y relative z-10"
             >
               <div
                 class="snap-center w-full flex-none h-full relative bg-black"
@@ -2519,7 +2583,7 @@
           class="glass-panel p-5 rounded-3xl flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
         >
           <div
-            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] bg-red-dark"
+            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] bg-red-dark touch-pan-y"
           >
             <iframe
               src="https://www.instagram.com/reel/DO0f39cElKy/embed"
@@ -2542,7 +2606,7 @@
           class="glass-panel p-5 rounded-3xl flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-100"
         >
           <div
-            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] bg-red-dark"
+            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] bg-red-dark touch-pan-y"
           >
             <iframe
               src="https://www.instagram.com/reel/DO_DDFnkkcN/embed"
@@ -2565,7 +2629,7 @@
           class="glass-panel p-5 rounded-3xl flex flex-col items-center reveal-item opacity-0 translate-y-12 scale-95 blur-[2px] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-200"
         >
           <div
-            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] bg-red-dark"
+            class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] bg-red-dark touch-pan-y"
           >
             <iframe
               src="https://www.instagram.com/reel/Dd3kKIBtZKs/embed"
@@ -2912,7 +2976,6 @@
     </section>
 
     <!-- PENGHARGAAN -->
-
     <section
       id="penghargaan"
       class="py-16 md:py-24 px-6 max-w-[1400px] mx-auto relative z-10"
@@ -2975,37 +3038,37 @@
 
             <!-- Image Carousel Container -->
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
               <!-- Gambar 1 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/7.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 2 - Slide 1"
                   onclick="openImageModal(this.src)"
                 />
               </div>
               <!-- Gambar 2 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/8.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 2 - Slide 2"
                   onclick="openImageModal(this.src)"
                 />
               </div>
               <!-- Gambar 3 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/9.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 2 - Slide 3"
                   onclick="openImageModal(this.src)"
                 />
@@ -3035,7 +3098,7 @@
           <h4
             class="font-display text-base md:text-lg font-bold text-gold-light leading-snug"
           >
-            Angota dan Pengurus Komunitas MC indonesia
+            Anggota dan Pengurus Komunitas MC indonesia
           </h4>
         </div>
         <!-- Card 1 -->
@@ -3068,37 +3131,37 @@
 
             <!-- Image Carousel Container -->
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
               <!-- Gambar 1 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/1.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 1 - Slide 1"
                   onclick="openImageModal(this.src)"
                 />
               </div>
               <!-- Gambar 2 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/2.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 1 - Slide 2"
                   onclick="openImageModal(this.src)"
                 />
               </div>
               <!-- Gambar 3 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/3.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 1 - Slide 3"
                   onclick="openImageModal(this.src)"
                 />
@@ -3162,37 +3225,37 @@
 
             <!-- Image Carousel Container -->
             <div
-              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+              class="flex overflow-x-auto snap-x snap-mandatory h-full w-full carousel-container [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth touch-pan-y"
             >
               <!-- Gambar 1 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/4.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 2 - Slide 1"
                   onclick="openImageModal(this.src)"
                 />
               </div>
               <!-- Gambar 2 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/5.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 2 - Slide 2"
                   onclick="openImageModal(this.src)"
                 />
               </div>
               <!-- Gambar 3 -->
               <div
-                class="snap-center w-full flex-none h-full relative overflow-hidden"
+                class="snap-center w-full flex-none h-full relative overflow-hidden group/item"
               >
                 <img
                   src="img/Finalis/6.jpeg"
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105 cursor-pointer"
+                  class="w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition duration-500 group-hover/item:scale-105 cursor-pointer"
                   alt="Sertifikat 2 - Slide 3"
                   onclick="openImageModal(this.src)"
                 />
@@ -3228,7 +3291,7 @@
       </div>
     </section>
 
-    <!-- KODE MODAL LIGHTBOX (UKURAN SEDANG & POSISI TENGAH) -->
+    <!-- KODE MODAL LIGHTBOX -->
     <div
       id="galleryModal"
       class="fixed inset-0 z-[9999] hidden bg-black/95 backdrop-blur-xl overflow-y-auto cursor-zoom-out transition-opacity duration-300 opacity-0"
@@ -3255,7 +3318,7 @@
         </svg>
       </button>
 
-      <!-- Wrapper Gambar (Dibuat center secara vertikal dan horizontal) -->
+      <!-- Wrapper Gambar -->
       <div
         class="min-h-full w-full flex items-center justify-center p-4 md:p-10"
       >
@@ -3524,7 +3587,6 @@
     </footer>
 
     <script>
-      // DITAMBAHKAN FUNGSI LIGHTBOX DISINI (Di luar DOMContentLoaded agar terbaca oleh HTML onClick)
       function openImageModal(src) {
         const modal = document.getElementById("galleryModal");
         const modalImg = document.getElementById("modalImage");
